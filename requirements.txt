@@ -29,4 +29,5 @@ yt-dlp
 youtube-search
 youtube-search-python
 git+https://github.com/Vivekkumar-IN/TheApi@main
+git+https://github.com/SEX-SUX/TheApi@main
 pytz
