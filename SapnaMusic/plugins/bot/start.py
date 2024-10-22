@@ -1,5 +1,5 @@
 import time
-
+import random
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -32,8 +32,9 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
+            await message.reply_sticker("CAACAgUAAxkBAAEBwg5nEnpOCM5vH2-ECjk4UUdk4fNhowAC8hAAAhYwMVXbLsaO018OyR4E")
             return await message.reply_photo(
-                photo=config.START_IMG_URL,
+                photo=random.choice(config.START_IMG_URL),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -59,7 +60,7 @@ async def start_pm(client, message: Message, _):
                 channel = result["channel"]["name"]
                 link = result["link"]
                 published = result["publishedTime"]
-            searched_text = _["start_7"].format(
+            searched_text = _["start_6"].format(
                 title, duration, views, published, channellink, channel, app.mention
             )
             key = InlineKeyboardMarkup(
@@ -84,18 +85,12 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-
-        # Send start_2 as plain text without an image
-        await message.reply_text(
-            text= "🍓 <b>Hello {0}<a href='https://envs.sh/ToH.jpg'>.</a> . .</b>".format(message.from_user.mention, app.mention),
+        await message.reply_sticker("CAACAgUAAxkBAAEBwg5nEnpOCM5vH2-ECjk4UUdk4fNhowAC8hAAAhYwMVXbLsaO018OyR4E")
+        await message.reply_photo(
+            photo=random.choice(config.START_IMG_URL),
+            caption=_["start_2"].format(message.from_user.mention, app.mention),
+            reply_markup=InlineKeyboardMarkup(out),
         )
-
-        # Send start_3 with reply_markup
-        await message.reply_text(
-            text=_["start_3"].format(app.mention),  # second caption (start_3)
-            reply_markup=InlineKeyboardMarkup(out),  # with reply_markup
-        )
-
         if await is_on_off(2):
             return await app.send_message(
                 chat_id=config.LOGGER_ID,
@@ -108,8 +103,9 @@ async def start_pm(client, message: Message, _):
 async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
-    await message.reply(
-        text= "<b>⬤ {0} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ<a href='https://envs.sh/ToH.jpg'>.</a></b>\n\n<b>⬤ ᴜᴘᴛɪᴍᴇ ➠</b> {1}".format(app.mention, get_readable_time(uptime)),
+    await message.reply_photo(
+        photo=random.choice(config.START_IMG_URL),
+        caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
     return await add_served_chat(message.chat.id)
@@ -128,11 +124,11 @@ async def welcome(client, message: Message):
                     pass
             if member.id == app.id:
                 if message.chat.type != ChatType.SUPERGROUP:
-                    await message.reply_text(_["start_5"])
+                    await message.reply_text(_["start_4"])
                     return await app.leave_chat(message.chat.id)
                 if message.chat.id in await blacklisted_chats():
                     await message.reply_text(
-                        _["start_6"].format(
+                        _["start_5"].format(
                             app.mention,
                             f"https://t.me/{app.username}?start=sudolist",
                             config.SUPPORT_CHAT,
@@ -142,15 +138,14 @@ async def welcome(client, message: Message):
                     return await app.leave_chat(message.chat.id)
 
                 out = start_panel(_)
-                text = "<b>ʜᴇʏ {0},\nᴛʜɪs ɪs {1}\n\nᴛʜᴀɴᴋs ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {2}, {3} ᴄᴀɴ ɴᴏᴡ ᴩʟᴀʏ sᴏɴɢs ɪɴ ᴛʜɪs ᴄʜᴀᴛ</b><a href='https://envs.sh/ToH.jpg'>.</a>".format(
-                    message.from_user.first_name,
-                    app.mention,
-                    message.chat.title,
-                    app.mention,
-                )
-
-                await message.reply_text(
-                    text=text,
+                await message.reply_photo(
+                    photo=random.choice(config.START_IMG_URL),
+                    caption=_["start_3"].format(
+                        message.from_user.first_name,
+                        app.mention,
+                        message.chat.title,
+                        app.mention,
+                    ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
                 await add_served_chat(message.chat.id)
