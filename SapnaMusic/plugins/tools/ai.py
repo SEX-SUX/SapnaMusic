@@ -1,45 +1,44 @@
+import os
 import random
 import time
 import requests
 from SapnaMusic import app
 from config import BOT_USERNAME
-
+from pyrogram.types import  Message
+from pyrogram.types import InputMediaPhoto
+from TheApi import api
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-# Importing TheApi instead of ChatGPT API
-from TheApi import api
 
-@app.on_message(filters.command(["chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["+", ".", "/", "-", "", "$", "#", "&"]))
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="˹ sυᴘᴘσʀᴛ ˼", url=f"https://t.me/SANATANI_SUPPORT"),
+        InlineKeyboardButton(text="˹ ᴜᴘᴅᴀᴛᴇ's ˼", url=f"https://t.me/TENSION_TECH"),
+    ],
+    [
+        InlineKeyboardButton(text="✙ ʌᴅᴅ ϻє ɪη ʏσυʀ ɢʀσυᴘ ✙", url=f"https://t.me/TensionxMusicBot?startgroup=true"),
+    ],
+]
+
+@app.on_message(
+    filters.command(
+        ["chatgpt", "i", "ai", "ask", "gpt", "solve"],
+        prefixes=["+", ".", "/", "-", "", "$", "#", "&", "A", "a"],
+    )
+)
 async def chat_gpt(bot, message):
+    
     try:
-        start_time = time.time()
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
-
         if len(message.command) < 2:
             await message.reply_text(
-                "**⬤ ᴇxᴀᴍᴘʟᴇ ➠** `/ask Where is TajMahal ?`"
-            )
+            "❍ ᴇxᴀᴍᴘʟᴇ :\n\n/chatgpt how to set any girl")
         else:
-            question = message.text.split(' ', 1)[1]
-
-            # Using TheApi's `chatgpt()` method to get the response
-            response = api.chatgpt(question)
-
-            # Fetching bot's name using get_me()
-            bot_info = await bot.get_me()
-            bot_name = bot_info.first_name
-            bot_id = bot_info.id
-
-            # Assuming `response` is directly the answer or response in a string format
-            if response:
-                end_time = time.time()
-                telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
-                await message.reply_text(
-                    f"🪐 {response.strip()}  \n\n**⬤ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➠ [{bot_name}](tg://user?id={bot_id})**",
-                    parse_mode=ParseMode.MARKDOWN
-                )
-            else:
-                await message.reply_text("No answer found in the response.")
+            a = message.text.split(' ', 1)[1]
+            r=api.gemini(a)["results"]
+            await message.reply_text(f" {r} \n\n❍ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 : <a href=https://t.me/TENSION_TECH>𝝩‌𝞊‌𝝶𝘀𝝸𝝾‌𝝶‌ 𝗧𝞊‌𝗰𝗵</a>", parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(EVAA))
     except Exception as e:
-        await message.reply_text(f"Error - {e}")
+        await message.reply_text(f"❍ ᴇʀʀᴏʀ: {e} ")
