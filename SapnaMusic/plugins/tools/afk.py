@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 NEXIO = [
         [
-            InlineKeyboardButton(text="• ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ •", url=f"https://t.me/HIMANSHI_MUSIC_BOT?startgroup=true"),
+            InlineKeyboardButton(text="• ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ •", url=f"https://t.me/{app.username}?startgroup=true"),
         ],
         ]
 
@@ -50,39 +50,39 @@ async def active_afk(_, message: Message):
             seenago = get_readable_time((int(time.time() - timeafk)))
             if afktype == "text":
                 send = await message.reply_text(
-                    f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
+                    f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
                     disable_web_page_preview=True,
                 )
             if afktype == "text_reason":
                 send = await message.reply_text(
-                    f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
+                    f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
                     disable_web_page_preview=True,
                 )
             if afktype == "animation":
                 if str(reasonafk) == "None":
                     send = await message.reply_animation(
                         data,
-                        caption=f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
+                        caption=f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
                     )
                 else:
                     send = await message.reply_animation(
                         data,
-                        caption=f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
+                        caption=f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
                     )
             if afktype == "photo":
                 if str(reasonafk) == "None":
                     send = await message.reply_photo(
                         photo=f"downloads/{user_id}.jpg",
-                        caption=f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
+                        caption=f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
                     )
                 else:
                     send = await message.reply_photo(
                         photo=f"downloads/{user_id}.jpg",
-                        caption=f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
+                        caption=f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`",
                     )
         except Exception:
             send = await message.reply_text(
-                f"**❖ {message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ",
+                f"<b>❖ {message.from_user.first_name}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ",
                 disable_web_page_preview=True,
             )
 
@@ -228,33 +228,33 @@ async def chat_watcher_func(_, message):
             reasonafk = reasondb["reason"]
             seenago = get_readable_time((int(time.time() - timeafk)))
             if afktype == "text":
-                msg += f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n"
+                msg += f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n"
             if afktype == "text_reason":
-                msg += f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
+                msg += f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
             if afktype == "animation":
                 if str(reasonafk) == "None":
                     send = await message.reply_animation(
                         data,
-                        caption=f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                        caption=f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                     )
                 else:
                     send = await message.reply_animation(
                         data,
-                        caption=f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                        caption=f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                     )
             if afktype == "photo":
                 if str(reasonafk) == "None":
                     send = await message.reply_photo(
                         photo=f"downloads/{userid}.jpg",
-                        caption=f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                        caption=f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                     )
                 else:
                     send = await message.reply_photo(
                         photo=f"downloads/{userid}.jpg",
-                        caption=f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                        caption=f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                     )
         except:
-            msg += f"**❖ {user_name[:25]}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ\n\n"
+            msg += f"<b>❖ {user_name[:25]}</b> ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ\n\n"
 
 
     if message.reply_to_message:
@@ -271,34 +271,34 @@ async def chat_watcher_func(_, message):
                     seenago = get_readable_time((int(time.time() - timeafk)))
                     if afktype == "text":
                         msg += (
-                            f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
+                            f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
                         )
                     if afktype == "text_reason":
-                        msg += f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
+                        msg += f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
                     if afktype == "animation":
                         if str(reasonafk) == "None":
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                caption=f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                             )
                         else:
                             send = await message.reply_animation(
                                 data,
-                                caption=f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                caption=f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                             )
                     if afktype == "photo":
                         if str(reasonafk) == "None":
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                caption=f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                             )
                         else:
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"**❖ {replied_first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                caption=f"<b>❖ {replied_first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                             )
                 except Exception:
-                    msg += f"**❖ {replied_first_name}** ɪs ᴀғk"
+                    msg += f"<b>❖ {replied_first_name}</b> ɪs ᴀғk"
         except:
             pass
 
@@ -327,34 +327,34 @@ async def chat_watcher_func(_, message):
                         seenago = get_readable_time((int(time.time() - timeafk)))
                         if afktype == "text":
                             msg += (
-                                f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
+                                f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
                             )
                         if afktype == "text_reason":
-                            msg += f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
+                            msg += f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user.id}.jpg",
-                                    caption=f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                     except:
-                        msg += f"**❖ {user.first_name[:25]}** ɪs ᴀғᴋ\n\n"
+                        msg += f"<b>❖ {user.first_name[:25]}</b> ɪs ᴀғᴋ\n\n"
             elif (entity[j].type) == MessageEntityType.TEXT_MENTION:
                 try:
                     user_id = entity[j].user.id
@@ -374,33 +374,33 @@ async def chat_watcher_func(_, message):
                         reasonafk = reasondb["reason"]
                         seenago = get_readable_time((int(time.time() - timeafk)))
                         if afktype == "text":
-                            msg += f"**❖ {first_name[:25]}** is ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
+                            msg += f"<b>❖ {first_name[:25]}</b> is ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n"
                         if afktype == "text_reason":
-                            msg += f"**❖ {first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
+                            msg += f"<b>❖ {first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n"
                         if afktype == "animation":
                             if str(reasonafk) == "None":
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**❖ {first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                             else:
                                 send = await message.reply_animation(
                                     data,
-                                    caption=f"**❖ {first_name[:25]}** ɪs AFK sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {first_name[:25]}</b> ɪs AFK sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**❖ {first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                             else:
                                 send = await message.reply_photo(
                                     photo=f"downloads/{user_id}.jpg",
-                                    caption=f"**❖ {first_name[:25]}** ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
+                                    caption=f"<b>❖ {first_name[:25]}</b> ɪs ᴀғᴋ sɪɴᴄᴇ {seenago}\n\n● ʀᴇᴀsᴏɴ ➥ `{reasonafk}`\n\n", reply_markup=InlineKeyboardMarkup(NEXIO),
                                 )
                     except:
-                        msg += f"**❖ {first_name[:25]}** ɪs ᴀғᴋ\n\n"
+                        msg += f"<b>❖ {first_name[:25]}</b> ɪs ᴀғᴋ\n\n"
             j += 1
     if msg != "":
         try:
