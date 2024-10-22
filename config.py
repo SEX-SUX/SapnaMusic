@@ -80,9 +80,10 @@ autoclean = []
 confirmer = {}
 
 
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://unitedcamps.in/Images/file_3061.jpg"
-)
+START_IMG_URL = [
+    "https://files.catbox.moe/jutcs7.jpg",
+    "https://files.catbox.moe/jutcs7.jpg",
+]
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg"
 )
