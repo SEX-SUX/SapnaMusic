@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters, enums 
 
 import config
-from SACHIN_MUSIC import app
+from SapnaMusic import app
 
 class BUTTONS(object):
     ABUTTON = [
