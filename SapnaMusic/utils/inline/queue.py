@@ -65,7 +65,6 @@ def queue_back_markup(_, CPLAY):
 
 def aq_markup(_, chat_id):
     buttons = [
-        [
         [ 
             InlineKeyboardButton(text="• ᴧᴅᴅ ᴍᴇ ɪɴ ʏσᴜʀ ɢʀσᴜᴘ •", url=f"https://t.me/TensionxMusicBot?startgroup=true")
         ],
