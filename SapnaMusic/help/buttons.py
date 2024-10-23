@@ -7,21 +7,21 @@ from SapnaMusic import app
 class BUTTONS(object):
     ABUTTON = [
         [
-            InlineKeyboardButton("ᴀɪ | ᴄʜᴀᴛɢᴘᴛ", callback_data="AI_BACK HELP_01"),
+            InlineKeyboardButton("ᴀɪ | ᴄʜᴀᴛɢᴘᴛ", callback_data="AI_BACK HELP_1"),
         ],
         [
-            InlineKeyboardButton("ᴄᴀʀʙᴏɴ", callback_data="AI_BACK HELP_02"),
-            InlineKeyboardButton("ᴛᴛs", callback_data="AI_BACK HELP_03"),
-            InlineKeyboardButton("ɪɴғᴏ", callback_data="AI_BACK HELP_04"),
+            InlineKeyboardButton("ᴄᴀʀʙᴏɴ", callback_data="AI_BACK HELP_2"),
+            InlineKeyboardButton("ᴛᴛs", callback_data="AI_BACK HELP_3"),
+            InlineKeyboardButton("ɪɴғᴏ", callback_data="AI_BACK HELP_4"),
         ],
         [
-            InlineKeyboardButton("ʙᴀɴ", callback_data="AI_BACK HELP_05"),
-            InlineKeyboardButton("ᴍᴜᴛᴇ", callback_data="AI_BACK HELP_06"),
-            InlineKeyboardButton("ᴋɪᴄᴋ", callback_data="AI_BACK HELP_07"),
+            InlineKeyboardButton("ʙᴀɴ", callback_data="AI_BACK HELP_5"),
+            InlineKeyboardButton("ᴍᴜᴛᴇ", callback_data="AI_BACK HELP_6"),
+            InlineKeyboardButton("ᴋɪᴄᴋ", callback_data="AI_BACK HELP_7"),
         ],
         [
-            InlineKeyboardButton("ɢʀᴀᴘʜ", callback_data="AI_BACK HELP_08"),
-            InlineKeyboardButton("sɢ", callback_data="AI_BACK HELP_09"),
+            InlineKeyboardButton("ɢʀᴀᴘʜ", callback_data="AI_BACK HELP_8"),
+            InlineKeyboardButton("sɢ", callback_data="AI_BACK HELP_9"),
             InlineKeyboardButton("ᴡᴇʟᴄᴏᴍᴇ", callback_data="AI_BACK HELP_10"),
         ],
         [
