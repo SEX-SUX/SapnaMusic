@@ -20,7 +20,7 @@ SACHIN = [
 ]
 
 
-@app.on_message(filters.command(["apna"chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["s", "S", "+", ".", "/", "-", "", "$", "#", "&"]))
+@app.on_message(filters.command(["apna"chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["s", "S", "+", ".", "/", "-", "+", "$", "#", "&"]))
 async def chat_gpt(bot, message):
     try:
         start_time = time.time()
