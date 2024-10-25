@@ -20,7 +20,7 @@ SACHIN = [
 ]
 
 
-@app.on_message(filters.command(["chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["+", ".", "/", "-", "", "$", "#", "&"]))
+@app.on_message(filters.command(["apna"chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["s", "S", "+", ".", "/", "-", "", "$", "#", "&"]))
 async def chat_gpt(bot, message):
     try:
         start_time = time.time()
@@ -28,7 +28,7 @@ async def chat_gpt(bot, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<b>⬤ ᴇxᴀᴍᴘʟᴇ ➠</b>\n\n<code>Ai Where is TajMahal ?</code>"
+                "<b>⬤ ᴇxᴀᴍᴘʟᴇ ➠</b>\n\n<code>Sapna Where is TajMahal ?</code>"
             )
         else:
             question = message.text.split(' ', 1)[1]
