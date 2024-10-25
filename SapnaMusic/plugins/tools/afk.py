@@ -34,7 +34,7 @@ SACHIN = [
     "https://graph.org/file/d37dd94135f355f9b6866.jpg",
     ]
 
-@app.on_message(filters.command(["afk", "off", "bye"], prefixes=["/", "!", "."]))
+@app.on_message(filters.command(["fk", "afk", "off", "bye", "ye"], prefixes=["a", "A", "b", "B", "/", "!", "."]))
 async def active_afk(_, message: Message):
     if message.sender_chat:
         return
