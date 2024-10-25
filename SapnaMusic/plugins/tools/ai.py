@@ -40,10 +40,10 @@ async def chat_gpt(bot, message):
                 end_time = time.time()
                 telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
                 await message.reply_text(
-                    f" {response.strip()}  \n\n**⬤ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➠ [{bot_name}](tg://user?id={bot_id})**",
+                    f"<b>⬤ {response.strip()}  </b>\n\n**⬤ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➠ [{bot_name}](tg://user?id={bot_id})**",
                     parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(SACHIN)
                 )
             else:
-                await message.reply_text("⬤ No answer found in the response.")
+                await message.reply_text("⬤ ɴᴏ ᴀɴsᴡᴇʀ ғᴏᴜɴᴅ ɪɴ ᴛʜᴇ ʀᴇsᴘᴏɴsᴇ")
     except Exception as e:
         await message.reply_text(f"Error - {e}")
