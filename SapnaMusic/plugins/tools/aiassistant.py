@@ -7,7 +7,7 @@ from SapnaMusic import app
 
 def ask_query(query, model=None):
     default_model = 'gpt-4o'
-    system_prompt = """You are a helpful assistant. Your name is Tanu, and your owner's name is Sachin, known as @V_VIP_OWNER """
+    system_prompt = """You are a helpful assistant. Your name is Sapna Ai, and your owner's name is Sachin, known as @v_vip_owner """
 
     model = model or default_model
 
