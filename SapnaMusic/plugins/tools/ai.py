@@ -20,7 +20,7 @@ SACHIN = [
 ]
 
 
-@app.on_message(filters.command(["apna", "chatgpt", "ai", "ask", "gpt", "solve"], prefixes=["s", "S", "+", ".", "/", "-", "+", "$", "#", "&"]))
+@app.on_message(filters.command(["apna", "chatgpt", "i", "ask", "gpt", "solve"], prefixes=["a", "A", "s", "S", "+", ".", "/", "-", "+", "$", "#", "&"]))
 async def chat_gpt(bot, message):
     try:
         start_time = time.time()
@@ -40,7 +40,7 @@ async def chat_gpt(bot, message):
                 end_time = time.time()
                 telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
                 await message.reply_text(
-                    f"<b>⬤ {response.strip()}  </b>\n\n**⬤ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➠ [{bot_name}](tg://user?id={bot_id})**",
+                    f"⬤ {response.strip()} \n\n**⬤ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➠ [{bot_name}](tg://user?id={bot_id})**",
                     parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(SACHIN)
                 )
             else:
