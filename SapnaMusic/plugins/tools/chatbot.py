@@ -10,7 +10,7 @@ from telegram.ext import (
 )
 
 # Replace this with your actual bot token
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "7642505679:AAFD-CVcvZRR_NDyOpnvYoNmMvzXqF30Bz4"
 
 # Global variable to store chat state (enabled/disabled)
 chatbot_enabled = {}
