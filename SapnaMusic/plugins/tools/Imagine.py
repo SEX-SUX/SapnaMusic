@@ -2,10 +2,10 @@ from SapnaMusic import app
 import requests
 import time
 import os
-from pyrogram import filters, Client 
+from pyrogram import filters
 
 # Command handler for /gen
-@Client.on_message(filters.command(['imagine','generate']))
+@app.on_message(filters.command(["imagine", "generate"]))
 async def generate_image(client, message):
     # Get the prompt from the command
     prompt = ' '.join(message.command[1:])
