@@ -7,12 +7,12 @@ from SapnaMusic import app
 
 def ask_query(query, model=None):
     default_model = 'gpt-4o'
-    system_prompt = """You are a helpful assistant. Your name is Sapna Ai, and your owner's name is Sachin, known as @v_vip_owner """
+    system_prompt = """ʏᴏᴜ ᴀʀᴇ ᴀ ʜᴇʟᴘғᴜʟ ᴀssɪsᴛᴀɴᴛ. ᴍʏ ɴᴀᴍᴇ ɪs sᴀᴘɴᴀ ᴀɪ, ᴀɴᴅ ᴍᴜ ᴏᴡɴᴇʀ ɴᴀᴍᴇ ɪs sᴀᴄʜɪɴ sᴀɴᴀᴛᴀɴɪ, ᴋɴᴏᴡɴ ᴀs : @V_VIP_OWNER """
 
     model = model or default_model
 
     if model == default_model:
-        query = f"{system_prompt}\n\nUser: {query}"
+        query = f"{system_prompt}\n\nᴜsᴇʀ: {query}"
 
     encoded_query = urllib.parse.quote(query)
     url = f"https://chatwithai.codesearch.workers.dev/?chat={encoded_query}&model={model}"
@@ -22,7 +22,7 @@ def ask_query(query, model=None):
     if response.status_code == 200:
         return response.json().get("result", "No response found.")
     else:
-        return f"Error fetching response from API. Status code: {response.status_code}"
+        return f"ᴇʀʀᴏʀ : ғᴇᴛᴄʜɪɴɢ ʀᴇsᴘᴏɴsᴇ ғʀᴏᴍ ᴀᴘɪ. sᴛᴀᴛᴜs ᴄᴏᴅᴇ : {response.status_code}"
 
 async def send_typing_action(client: Client, chat_id: int, duration: int = 1):
     await client.send_chat_action(chat_id, enums.ChatAction.TYPING)
@@ -30,11 +30,10 @@ async def send_typing_action(client: Client, chat_id: int, duration: int = 1):
 
 def get_model_from_db(group_id):
     return 'claude-sonnet-3.5'
-
-@app.on_message(filters.command("aii"))
+@app.on_message(filters.command(["apna", "chatgpt", "i", "ask", "gpt", "solve"], prefixes=["A", "S", "+", ".", "/", "-", ":", "$", "#", "&"]))
 async def handle_query(client, message):
     if len(message.command) < 2:
-        await message.reply_text("<b>Please provide a query to ask.</b>")
+        await message.reply_text("<b>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.</b>")
         return
 
     user_query = message.text.split(maxsplit=1)[1]
@@ -63,4 +62,4 @@ async def handle_mention(client: Client, message: Message) -> None:
 
         await message.reply(f"<b>{api_response}</b>")
     else:
-        await message.reply("<b>Please ask a question after mentioning me</b>")
+        await message.reply("<b>ᴘʟᴇᴀsᴇ ᴀsᴋ ᴀ ǫᴜᴇsᴛɪᴏɴ ᴀғᴛᴇʀ ᴍᴇɴᴛɪᴏɴɪɴɢ ᴍᴇ</b>")
