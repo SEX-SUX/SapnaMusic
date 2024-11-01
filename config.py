@@ -6,15 +6,15 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", None))
+API_ID = getenv("API_ID", None)
 API_HASH = getenv("API_HASH", None)
 
 BOT_USERNAME = getenv("BOT_USERNAME", "HIMANSHI_MUSIC_BOT")
 BOT_TOKEN = getenv("BOT_TOKEN", None)
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-LOGGER_ID = int(getenv("LOGGER_ID", None))
-OWNER_ID = int(getenv("OWNER_ID", None))
+LOGGER_ID = getenv("LOGGER_ID", None)
+OWNER_ID = getenv("OWNER_ID", None)
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
