@@ -7,7 +7,7 @@ from SapnaMusic import app
 
 def ask_query(query, model=None):
     default_model = 'gpt-4o'
-    system_prompt = """ʏᴏᴜ ᴀʀᴇ ᴀ ʜᴇʟᴘғᴜʟ ᴀssɪsᴛᴀɴᴛ. ᴍʏ ɴᴀᴍᴇ ɪs sᴀᴘɴᴀ ᴀɪ, ᴀɴᴅ ᴍᴜ ᴏᴡɴᴇʀ ɴᴀᴍᴇ ɪs sᴀᴄʜɪɴ sᴀɴᴀᴛᴀɴɪ, ᴋɴᴏᴡɴ ᴀs : @V_VIP_OWNER """
+    system_prompt = """ʏᴏᴜ ᴀʀᴇ ᴀ ʜᴇʟᴘғᴜʟ ᴀssɪsᴛᴀɴᴛ. ᴍʏ ɴᴀᴍᴇ ɪs sᴀᴘɴᴀ ᴀɪ, ᴀɴᴅ ᴍᴜ ᴏᴡɴᴇʀ ɴᴀᴍᴇ ɪs sᴀᴄʜɪɴ sᴀɴᴀᴛᴀɴɪ, ᴋɴᴏᴡɴ ᴀs : @itzAsuraa """
 
     model = model or default_model
 
