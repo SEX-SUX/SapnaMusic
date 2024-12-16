@@ -13,6 +13,8 @@ pbot
 pillow
 psutil
 py-tgcalls==0.9.7
+httpx[http2]==0.27.2
+pyrogram==2.0.106
 pyfiglet
 pykeyboard
 pyrogram
